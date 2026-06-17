@@ -1,0 +1,178 @@
+{
+  "topic": {
+    "id": "T001",
+    "name": "美伊停火与核谈判（2026-06）",
+    "summary": "围绕停火、霍尔木兹通航、石油出口恢复、伊朗核计划与核查展开的复合型地区安全话题。",
+    "status": "active",
+    "start_date": "2026-02-06",
+    "tags": [
+      "US",
+      "Iran",
+      "Nuclear",
+      "Hormuz",
+      "Sanctions",
+      "MiddleEast"
+    ]
+  },
+  "subtopics": [
+    {
+      "id": "T001-A",
+      "name": "霍尔木兹海峡通航与能源市场"
+    },
+    {
+      "id": "T001-B",
+      "name": "伊朗核计划与核查"
+    },
+    {
+      "id": "T001-C",
+      "name": "以色列/黎巴嫩战线外溢"
+    },
+    {
+      "id": "T001-D",
+      "name": "制裁、资产解冻与重建议题"
+    }
+  ],
+  "entities": [
+    "United States",
+    "Iran",
+    "IAEA",
+    "Israel",
+    "Oman",
+    "Switzerland",
+    "Strait of Hormuz"
+  ],
+  "events": [
+    {
+      "id": "E1",
+      "date": "2026-02-06",
+      "title": "美伊在阿曼恢复间接谈判",
+      "summary": "双方重新启动接触，为后续框架性安排铺路。",
+      "confidence": 0.78,
+      "source_refs": [
+        "SRC-REUTERS-2026-06-14"
+      ]
+    },
+    {
+      "id": "E2",
+      "date": "2026-02-22",
+      "title": "伊朗释放核谈判交换条件",
+      "summary": "包括和平浓缩权、部分高浓铀外运与制裁减免等交换条件。",
+      "confidence": 0.73,
+      "source_refs": [
+        "SRC-REUTERS-2026-06-02"
+      ]
+    },
+    {
+      "id": "E3",
+      "date": "2026-06-10",
+      "title": "IAEA 要求伊朗申报浓缩铀库存并接受核查",
+      "summary": "核查问题成为后续协议可执行性的前置约束。",
+      "confidence": 0.88,
+      "source_refs": [
+        "SRC-REUTERS-2026-06-10"
+      ]
+    },
+    {
+      "id": "E4",
+      "date": "2026-06-14",
+      "title": "美伊宣布达成框架性安排",
+      "summary": "协议重点先放在停火、降级与海峡通航恢复。",
+      "confidence": 0.81,
+      "source_refs": [
+        "SRC-REUTERS-2026-06-14",
+        "SRC-AP-2026-06-17"
+      ]
+    },
+    {
+      "id": "E5",
+      "date": "2026-06-19",
+      "title": "计划在瑞士签署正式文本",
+      "summary": "该阶段仍更接近临时性文本，而非终局协议。",
+      "confidence": 0.7,
+      "source_refs": [
+        "SRC-REUTERS-2026-06-14"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from_id": "E1",
+      "to_id": "E2",
+      "relation_type": "leads_to",
+      "confidence": 0.79,
+      "evidence_note": "谈判恢复后逐步出现交换条件。"
+    },
+    {
+      "from_id": "E2",
+      "to_id": "E4",
+      "relation_type": "bargaining_position",
+      "confidence": 0.72,
+      "evidence_note": "伊朗此前提出的交换条件构成后续框架安排背景。"
+    },
+    {
+      "from_id": "E3",
+      "to_id": "E4",
+      "relation_type": "pressure_on",
+      "confidence": 0.77,
+      "evidence_note": "IAEA 核查压力推动协议把核问题后置但保留议程。"
+    },
+    {
+      "from_id": "T001",
+      "to_id": "T001-A",
+      "relation_type": "directly_affects",
+      "confidence": 0.9,
+      "evidence_note": "海峡通航与石油出口是最直接外溢面。"
+    },
+    {
+      "from_id": "T001",
+      "to_id": "T001-B",
+      "relation_type": "core_dispute",
+      "confidence": 0.95,
+      "evidence_note": "核计划与核查仍是决定协议深度的核心争点。"
+    },
+    {
+      "from_id": "T001",
+      "to_id": "T001-C",
+      "relation_type": "spillover_risk",
+      "confidence": 0.68,
+      "evidence_note": "地区代理战线变化会影响谈判稳定性。"
+    },
+    {
+      "from_id": "T001",
+      "to_id": "T001-D",
+      "relation_type": "incentive_structure",
+      "confidence": 0.83,
+      "evidence_note": "制裁与卖油能力恢复构成主要交换激励。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC-REUTERS-2026-06-14",
+      "publisher": "Reuters via U.S. News",
+      "date": "2026-06-14",
+      "slug": "us-iran-reach-peace-deal-signing-set-for-friday-pakistan-says"
+    },
+    {
+      "id": "SRC-REUTERS-2026-06-10",
+      "publisher": "Reuters via U.S. News",
+      "date": "2026-06-10",
+      "slug": "iaea-board-passes-resolution-demanding-iran-report-uranium-stocks-diplomats-say"
+    },
+    {
+      "id": "SRC-REUTERS-2026-06-02",
+      "publisher": "Reuters via U.S. News",
+      "date": "2026-06-02",
+      "slug": "us-lawmakers-to-grill-rubio-as-iran-war-enters-fourth-month"
+    },
+    {
+      "id": "SRC-AP-2026-06-17",
+      "publisher": "AP via Newsday",
+      "date": "2026-06-17",
+      "slug": "iran-us-israel-war-oil-deal-june-17-2026"
+    }
+  ],
+  "assessment": {
+    "label": "脆弱临时交易",
+    "summary": "当前更像以停火、通航和短期稳定为先导，把核问题后置处理的阶段性安排，而非终局协议。"
+  }
+}
