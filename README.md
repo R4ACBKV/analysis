@@ -15,6 +15,7 @@
 ## 目录
 
 - [docs/topic-model-and-us-iran-2026-06-17.md](docs/topic-model-and-us-iran-2026-06-17.md)：建模示例、截至 2026-06-17 的美伊局势样例分析，以及油价与 SPR 影响说明。
+- [docs/oil-price-and-us-energy-security-2026-06-17.md](docs/oil-price-and-us-energy-security-2026-06-17.md)：石油价格影响链、特朗普和谈动机、美国受影响路径与 SPR 风险专题。
 - [examples/us-iran-2026-06-17.topic.json](examples/us-iran-2026-06-17.topic.json)：可直接复用的结构化样例。
 - [TODO.codex.md](TODO.codex.md)：持续开发上下文。
 

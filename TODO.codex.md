@@ -13,6 +13,7 @@
 ## Scope
 - `README.md`
 - `docs/topic-model-and-us-iran-2026-06-17.md`
+- `docs/oil-price-and-us-energy-security-2026-06-17.md`
 - `examples/us-iran-2026-06-17.topic.json`
 - `.gitignore`
 
@@ -28,6 +29,7 @@
 - [x] 编写 2026-06-17 美伊局势示例分析。
 - [x] 提供可入库 JSON 示例。
 - [x] 补充油价驱动、美国影响与 SPR 风险分析。
+- [x] 拆出独立油价与美国能源安全专题文档。
 - [ ] 后续如需继续，补数据库 schema 与查询 API 设计。
 
 ## Verification
