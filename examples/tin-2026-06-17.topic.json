@@ -1,0 +1,178 @@
+{
+  "topic": {
+    "id": "T-SN-2026-06",
+    "name": "锡市场：供需修复、低库存与下游焊料需求（2026-06）",
+    "summary": "围绕锡矿供应修复、精炼锡恢复滞后、低库存、高集中度以及焊料/光伏/电子需求韧性展开的复合型商品话题。",
+    "status": "active",
+    "start_date": "2026-06-01",
+    "tags": [
+      "Tin",
+      "LME",
+      "Myanmar",
+      "Indonesia",
+      "Solder",
+      "Inventory"
+    ]
+  },
+  "subtopics": [
+    {
+      "id": "T-SN-2026-06-A",
+      "name": "矿端供应修复"
+    },
+    {
+      "id": "T-SN-2026-06-B",
+      "name": "精炼锡恢复滞后"
+    },
+    {
+      "id": "T-SN-2026-06-C",
+      "name": "LME 低库存与现货结构"
+    },
+    {
+      "id": "T-SN-2026-06-D",
+      "name": "焊料、光伏与电子需求"
+    }
+  ],
+  "entities": [
+    "International Tin Association",
+    "LME",
+    "Myanmar Man Maw Mine",
+    "Bisie Mine",
+    "PT Timah",
+    "China",
+    "Electronics Sector",
+    "Solar Sector"
+  ],
+  "events": [
+    {
+      "id": "E-SN-1",
+      "date": "2026-06-01",
+      "title": "Reuters 指出锡市场正在再平衡但投资者仍押注稀缺",
+      "summary": "矿端修复、库存回升，但价格仍维持高位。",
+      "confidence": 0.88,
+      "source_refs": [
+        "SRC-REUTERS-2026-06-01"
+      ]
+    },
+    {
+      "id": "E-SN-2",
+      "date": "2026-06-01",
+      "title": "ITA 预计 2026 年锡矿产量增长 8.7%",
+      "summary": "矿端供应较前两年明显改善。",
+      "confidence": 0.86,
+      "source_refs": [
+        "SRC-REUTERS-2026-06-01",
+        "SRC-ITA-2026-INVEST"
+      ]
+    },
+    {
+      "id": "E-SN-3",
+      "date": "2026-06-01",
+      "title": "精炼锡产量预计仅增长 2.7%",
+      "summary": "冶炼恢复慢于矿端，说明中游仍是瓶颈。",
+      "confidence": 0.82,
+      "source_refs": [
+        "SRC-REUTERS-2026-06-01"
+      ]
+    },
+    {
+      "id": "E-SN-4",
+      "date": "2026-06-03",
+      "title": "PT Timah 设定 2026 年精炼锡产量目标 30000 吨",
+      "summary": "印尼大厂显著提高产量目标，缓和市场紧张预期。",
+      "confidence": 0.8,
+      "source_refs": [
+        "SRC-REUTERS-2026-06-03"
+      ]
+    },
+    {
+      "id": "E-SN-5",
+      "date": "2026-06-16",
+      "title": "锡价仍维持在 5.5 万美元/吨上下",
+      "summary": "价格高位震荡，显示供给修复尚未彻底压倒稀缺估值。",
+      "confidence": 0.77,
+      "source_refs": [
+        "SRC-TE-2026-06-17"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from_id": "E-SN-2",
+      "to_id": "T-SN-2026-06-A",
+      "relation_type": "improves_mine_supply",
+      "confidence": 0.86,
+      "evidence_note": "矿端较前两年修复明显。"
+    },
+    {
+      "from_id": "E-SN-3",
+      "to_id": "T-SN-2026-06-B",
+      "relation_type": "signals_refining_bottleneck",
+      "confidence": 0.82,
+      "evidence_note": "精炼恢复速度慢于矿端。"
+    },
+    {
+      "from_id": "E-SN-1",
+      "to_id": "T-SN-2026-06-C",
+      "relation_type": "shows_inventory_rebuild_but_not_relief",
+      "confidence": 0.84,
+      "evidence_note": "库存回升但绝对量仍低。"
+    },
+    {
+      "from_id": "E-SN-5",
+      "to_id": "T-SN-2026-06-C",
+      "relation_type": "keeps_scarcity_premium_alive",
+      "confidence": 0.77,
+      "evidence_note": "价格仍维持高位。"
+    },
+    {
+      "from_id": "T-SN-2026-06-D",
+      "to_id": "T-SN-2026-06-C",
+      "relation_type": "supports_structural_tightness",
+      "confidence": 0.8,
+      "evidence_note": "焊料、AI、光伏需求增强长期韧性。"
+    },
+    {
+      "from_id": "T-SN-2026-06-A",
+      "to_id": "T-SN-2026-06-B",
+      "relation_type": "recovers_faster_than",
+      "confidence": 0.83,
+      "evidence_note": "矿端修复领先于精炼端。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC-REUTERS-2026-06-01",
+      "publisher": "Reuters via Mining.com",
+      "date": "2026-06-01",
+      "slug": "column-tin-re-balances-but-investors-are-still-betting-on-scarcity"
+    },
+    {
+      "id": "SRC-REUTERS-2026-06-03",
+      "publisher": "Reuters via Mining.com",
+      "date": "2026-06-03",
+      "slug": "indonesias-pt-timah-targets-30000t-of-refined-tin-output-for-2026"
+    },
+    {
+      "id": "SRC-ITA-2026-INVEST",
+      "publisher": "International Tin Association",
+      "date": "2026-01-01",
+      "slug": "the-need-for-investment-in-tin-future-supply"
+    },
+    {
+      "id": "SRC-ITA-USE",
+      "publisher": "International Tin Association",
+      "date": "2026-01-01",
+      "slug": "ita-study-tin-use-in-recovery-cycle"
+    },
+    {
+      "id": "SRC-TE-2026-06-17",
+      "publisher": "Trading Economics",
+      "date": "2026-06-17",
+      "slug": "commodity/tin"
+    }
+  ],
+  "assessment": {
+    "label": "高位震荡偏强",
+    "summary": "供给边际修复限制了继续线性上冲，但库存薄、供应集中和焊料需求韧性仍支撑高估值。"
+  }
+}
