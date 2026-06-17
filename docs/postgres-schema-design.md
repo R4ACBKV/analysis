@@ -1,0 +1,224 @@
+# Postgres Schema 设计说明
+
+这份设计说明对应 [schema/postgres-initial-schema.sql](/Users/qq/code/analysis/schema/postgres-initial-schema.sql:1)。
+
+目标不是一次性把所有需求做满，而是给当前仓库已有的 Topic / Event / Entity / Relation / Source / Claim 模型提供一版**可直接落库**的初始结构，并保留后续扩展空间。
+
+## 1. 设计原则
+
+### 1.1 用 `analysis_nodes` 统一承接图谱对象
+
+`Topic`、`Event`、`Entity`、`Claim` 都属于“可被关系边连接”的节点。因此 schema 采用一个统一的父表：
+
+- `analysis_nodes`
+
+再通过一对一子表细分：
+
+- `topics`
+- `events`
+- `entities`
+- `claims`
+
+这样做的好处是：
+
+- 可以用一张 `node_relations` 表表达任意节点间关系；
+- 既适合做关系型查询，也适合未来接图查询或向量检索；
+- 不需要为 `topic-topic`、`event-event`、`topic-event` 分别建很多重复关系表。
+
+### 1.2 来源和 claim 分开
+
+来源是原始材料，claim 是从来源中抽出的具体说法。两者职责不同：
+
+- `sources`：负责溯源、发布时间、URL、发布方、语种、抓取元数据。
+- `claims`：负责保存“某来源里提到了什么说法”、置信度、是否是推断、提取方式等。
+
+这样才能清楚地区分：
+
+- 原始事实
+- 媒体表述
+- 系统归纳
+- 分析判断
+
+### 1.3 用 `node_links` 补足高频显式关联
+
+虽然 `node_relations` 已经足以表达一切，但很多查询在业务上高频且固定，例如：
+
+- 一个 Topic 包含哪些 Event
+- 一个 Event 涉及哪些 Entity
+- 一个 Claim 说的是哪个 Event / Topic / Entity
+
+因此增加三张显式 link 表：
+
+- `topic_event_links`
+- `event_entity_links`
+- `claim_node_links`
+
+这样后续 API 和统计查询会更简单。
+
+## 2. 主要表
+
+### 2.1 `analysis_nodes`
+
+统一节点父表，保存所有节点共享字段：
+
+- `id`
+- `node_kind`
+- `slug`
+- `title`
+- `summary`
+- `status`
+- `tags`
+- `metadata`
+- `created_at`
+- `updated_at`
+
+### 2.2 `topics`
+
+保存话题层字段：
+
+- `node_id`
+- `start_date`
+- `end_date`
+- `region`
+- `risk_level`
+
+### 2.3 `events`
+
+保存事件层字段：
+
+- `node_id`
+- `occurred_from`
+- `occurred_to`
+- `time_precision`
+- `location_name`
+- `country_code`
+- `importance`
+
+其中 `occurred_from` / `occurred_to` 用来表达：
+
+- 精确时间
+- 只知道当天
+- 只知道某个时间段
+
+### 2.4 `entities`
+
+保存参与方字段：
+
+- `node_id`
+- `entity_type`
+- `canonical_name`
+- `country_code`
+- `aliases`
+- `external_refs`
+
+### 2.5 `sources`
+
+保存来源元数据：
+
+- `id`
+- `source_type`
+- `publisher`
+- `title`
+- `url`
+- `published_at`
+- `author_name`
+- `language_code`
+- `content_hash`
+- `metadata`
+
+### 2.6 `claims`
+
+保存来源中的具体说法：
+
+- `node_id`
+- `source_id`
+- `claim_text`
+- `normalized_claim`
+- `claim_kind`
+- `polarity`
+- `confidence`
+- `extraction_method`
+- `quote_span`
+
+### 2.7 `node_relations`
+
+统一关系表，用来表达：
+
+- topic-topic
+- event-event
+- topic-event
+- entity-topic
+- entity-event
+- claim-event
+
+关键字段：
+
+- `from_node_id`
+- `to_node_id`
+- `relation_type`
+- `confidence`
+- `valid_from`
+- `valid_to`
+- `source_id`
+- `supporting_claim_id`
+- `evidence_note`
+
+## 3. 为什么不用大量枚举
+
+初始 schema 里只对少数字段使用 `CHECK` 约束，而没有把所有类型都写成 PostgreSQL enum。原因是当前项目仍在早期，类型集合还会继续长：
+
+- `relation_type`
+- `entity_type`
+- `claim_kind`
+
+这些字段如果过早固化成 enum，会让后续 schema migration 变得很重。当前阶段用文本 + 索引 + 约束更灵活。
+
+## 4. 索引设计
+
+当前 SQL 已包含几类高频索引：
+
+- `slug`
+- `node_kind`
+- 时间字段
+- `source_id`
+- `relation_type`
+- `from_node_id / to_node_id`
+- `tags` 和 `metadata` 的 GIN 索引
+
+这足够支撑：
+
+- 按话题找事件
+- 按实体找事件
+- 按时间窗口过滤
+- 按关系类型追链
+- 按标签和元数据筛选
+
+## 5. 后续扩展建议
+
+如果下一步继续做系统实现，建议按这个顺序扩：
+
+1. 增加 `source_contents` 表，分离原文正文和元数据。
+2. 增加 `embeddings` 表或 `pgvector` 字段，用于语义检索。
+3. 增加 `node_snapshots`，保存 AI 分析生成的阶段性判断。
+4. 增加 `api_query_cache` 或物化视图，支撑复杂聚合查询。
+
+## 6. 当前 schema 能直接支撑什么
+
+这版 schema 已经能直接支撑仓库当前两类样例：
+
+- 美伊和谈专题
+- 铜市场专题
+
+也能支持继续扩展到：
+
+- 铝 / 镍专题
+- 多话题关联图
+- 时间线视图
+- 溯源查看器
+
+下一步如果你要继续，我建议直接补：
+
+1. `seed` 数据
+2. 查询 API 设计
+3. 一个最小可用的 ingestion / normalize 流程
+

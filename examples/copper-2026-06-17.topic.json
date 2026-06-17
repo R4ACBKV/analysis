@@ -1,0 +1,191 @@
+{
+  "topic": {
+    "id": "T-CU-2026-06",
+    "name": "铜市场：供需、库存迁移与美国关税预期（2026-06）",
+    "summary": "围绕全球精炼铜供需、中国需求弹性、LME/COMEX 库存迁移以及美国精炼铜关税预期展开的复合型大宗商品话题。",
+    "status": "active",
+    "start_date": "2026-03-01",
+    "tags": [
+      "Copper",
+      "LME",
+      "COMEX",
+      "Tariff",
+      "ChinaDemand",
+      "Inventory"
+    ]
+  },
+  "subtopics": [
+    {
+      "id": "T-CU-2026-06-A",
+      "name": "全球精炼铜平衡表"
+    },
+    {
+      "id": "T-CU-2026-06-B",
+      "name": "LME/COMEX 库存迁移"
+    },
+    {
+      "id": "T-CU-2026-06-C",
+      "name": "美国精炼铜关税预期"
+    },
+    {
+      "id": "T-CU-2026-06-D",
+      "name": "中国进口与现货需求"
+    }
+  ],
+  "entities": [
+    "ICSG",
+    "IEA",
+    "LME",
+    "CME/COMEX",
+    "Trafigura",
+    "United States",
+    "China",
+    "Indonesia"
+  ],
+  "events": [
+    {
+      "id": "E-CU-1",
+      "date": "2026-03-02",
+      "title": "IEA 指出铜价创新高但冶炼环节承压",
+      "summary": "长期供给受限与短期库存堆积并存，强化铜的结构性紧张叙事。",
+      "confidence": 0.84,
+      "source_refs": [
+        "SRC-IEA-2026-03-02"
+      ]
+    },
+    {
+      "id": "E-CU-2",
+      "date": "2026-04-23",
+      "title": "ICSG 将 2026 年精炼铜市场修正为小幅过剩",
+      "summary": "全球平衡表从此前的短缺预期修正为约 9.6 万吨过剩。",
+      "confidence": 0.9,
+      "source_refs": [
+        "SRC-ICSG-2026-04-23"
+      ]
+    },
+    {
+      "id": "E-CU-3",
+      "date": "2026-05-22",
+      "title": "Trafigura 计划从 LME 撤出大批铜库存",
+      "summary": "美国关税决定临近，交易商加速把铜运往美国。",
+      "confidence": 0.82,
+      "source_refs": [
+        "SRC-REUTERS-2026-05-22"
+      ]
+    },
+    {
+      "id": "E-CU-4",
+      "date": "2026-06-08",
+      "title": "LME 库存下降推动铜价继续冲高",
+      "summary": "LME 三个月铜价升至 13610 至 13665 美元/吨区间。",
+      "confidence": 0.78,
+      "source_refs": [
+        "SRC-REUTERS-2026-06-08"
+      ]
+    },
+    {
+      "id": "E-CU-5",
+      "date": "2026-06-10",
+      "title": "中国进口和洋山溢价走弱显示高价抑制需求",
+      "summary": "前五个月中国铜进口同比下降 7%，洋山溢价回落。",
+      "confidence": 0.8,
+      "source_refs": [
+        "SRC-REUTERS-2026-06-10"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from_id": "E-CU-1",
+      "to_id": "T-CU-2026-06-A",
+      "relation_type": "frames_long_term_supply_constraint",
+      "confidence": 0.84,
+      "evidence_note": "IEA 强调新矿不足、品位下降与长期需求增长。"
+    },
+    {
+      "from_id": "E-CU-2",
+      "to_id": "T-CU-2026-06-A",
+      "relation_type": "revises_balance_sheet",
+      "confidence": 0.9,
+      "evidence_note": "ICSG 将 2026 年平衡表修正为小幅过剩。"
+    },
+    {
+      "from_id": "E-CU-3",
+      "to_id": "T-CU-2026-06-B",
+      "relation_type": "drives_inventory_shift",
+      "confidence": 0.82,
+      "evidence_note": "美国关税预期驱动 LME 向 COMEX 的库存迁移。"
+    },
+    {
+      "from_id": "E-CU-3",
+      "to_id": "T-CU-2026-06-C",
+      "relation_type": "anticipates_policy_change",
+      "confidence": 0.79,
+      "evidence_note": "抢进口本身就是对关税落地的前置反应。"
+    },
+    {
+      "from_id": "E-CU-4",
+      "to_id": "T-CU-2026-06-B",
+      "relation_type": "confirms_lme_tightness",
+      "confidence": 0.78,
+      "evidence_note": "LME 可交割库存下降强化现货偏紧。"
+    },
+    {
+      "from_id": "E-CU-5",
+      "to_id": "T-CU-2026-06-D",
+      "relation_type": "signals_demand_resistance",
+      "confidence": 0.8,
+      "evidence_note": "中国真实采购节奏没有完全跟上高价。"
+    },
+    {
+      "from_id": "T-CU-2026-06-C",
+      "to_id": "T-CU-2026-06-B",
+      "relation_type": "causes_regional_inventory_distortion",
+      "confidence": 0.86,
+      "evidence_note": "政策预期改变库存地理分布。"
+    },
+    {
+      "from_id": "T-CU-2026-06-A",
+      "to_id": "T-CU-2026-06-D",
+      "relation_type": "offset_by_weaker_realized_demand",
+      "confidence": 0.74,
+      "evidence_note": "长期结构性紧张被短期高价需求抑制部分对冲。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC-IEA-2026-03-02",
+      "publisher": "IEA",
+      "date": "2026-03-02",
+      "slug": "copper-prices-have-hit-record-highs-but-smelters-face-mounting-strategic-pressures"
+    },
+    {
+      "id": "SRC-ICSG-2026-04-23",
+      "publisher": "ICSG",
+      "date": "2026-04-23",
+      "slug": "copper-market-forecast-2026-2027"
+    },
+    {
+      "id": "SRC-REUTERS-2026-05-22",
+      "publisher": "Reuters",
+      "date": "2026-05-22",
+      "slug": "trafigura-plans-to-withdraw-lme-copper-stocks-ahead-of-us-tariff-ruling-sources-say"
+    },
+    {
+      "id": "SRC-REUTERS-2026-06-08",
+      "publisher": "Reuters",
+      "date": "2026-06-08",
+      "slug": "copper-prices-boosted-by-falling-stocks-at-lme-warehouses"
+    },
+    {
+      "id": "SRC-REUTERS-2026-06-10",
+      "publisher": "Reuters",
+      "date": "2026-06-10",
+      "slug": "china-copper-imports-and-yangshan-premium-show-demand-resistance"
+    }
+  ],
+  "assessment": {
+    "label": "高位震荡，长期偏强",
+    "summary": "短期由美国关税预期和库存迁移主导，容易大幅波动；中长期仍由供给约束和电气化需求支撑。"
+  }
+}

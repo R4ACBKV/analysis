@@ -17,7 +17,11 @@
 - [docs/topic-model-and-us-iran-2026-06-17.md](docs/topic-model-and-us-iran-2026-06-17.md)：建模示例、截至 2026-06-17 的美伊局势样例分析，以及油价与 SPR 影响说明。
 - [docs/oil-price-and-us-energy-security-2026-06-17.md](docs/oil-price-and-us-energy-security-2026-06-17.md)：石油价格影响链、特朗普和谈动机、美国受影响路径与 SPR 风险专题。
 - [docs/copper-supply-demand-and-tariff-2026-06-17.md](docs/copper-supply-demand-and-tariff-2026-06-17.md)：铜供需、库存迁移、美国关税预期与价格走向判断。
+- [docs/base-metals-comparison-2026-06-17.md](docs/base-metals-comparison-2026-06-17.md)：铜、铝、镍的横向比较。
+- [docs/postgres-schema-design.md](docs/postgres-schema-design.md)：当前 Topic/Event/Entity/Relation/Source/Claim 模型的 Postgres 设计说明。
+- [schema/postgres-initial-schema.sql](schema/postgres-initial-schema.sql)：可直接执行的初始 schema。
 - [examples/us-iran-2026-06-17.topic.json](examples/us-iran-2026-06-17.topic.json)：可直接复用的结构化样例。
+- [examples/copper-2026-06-17.topic.json](examples/copper-2026-06-17.topic.json)：铜市场专题的结构化样例。
 - [TODO.codex.md](TODO.codex.md)：持续开发上下文。
 
 ## 最小落地建议
