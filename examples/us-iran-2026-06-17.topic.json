@@ -2,7 +2,7 @@
   "topic": {
     "id": "T001",
     "name": "美伊停火与核谈判（2026-06）",
-    "summary": "围绕停火、霍尔木兹通航、石油出口恢复、伊朗核计划与核查展开的复合型地区安全话题。",
+    "summary": "围绕停火、霍尔木兹通航、石油出口恢复、伊朗核计划与核查以及 2026-06-18 备忘录签署/执行展开的复合型地区安全话题。",
     "status": "active",
     "start_date": "2026-02-06",
     "tags": [
@@ -85,12 +85,23 @@
     },
     {
       "id": "E5",
-      "date": "2026-06-19",
-      "title": "计划在瑞士签署正式文本",
-      "summary": "该阶段仍更接近临时性文本，而非终局协议。",
-      "confidence": 0.7,
+      "date": "2026-06-17",
+      "title": "特朗普与佩泽希齐扬完成备忘录签署",
+      "summary": "备忘录由双方领导人完成签署，焦点转向执行而非是否签署。",
+      "confidence": 0.84,
       "source_refs": [
-        "SRC-REUTERS-2026-06-14"
+        "SRC-REUTERS-2026-06-17",
+        "SRC-REUTERS-2026-06-18"
+      ]
+    },
+    {
+      "id": "E6",
+      "date": "2026-06-19",
+      "title": "原定瑞士签署仪式可能转为确认性节点",
+      "summary": "由于备忘录已先行签署，瑞士仪式不再是唯一决定性节点。",
+      "confidence": 0.68,
+      "source_refs": [
+        "SRC-REUTERS-2026-06-18"
       ]
     }
   ],
@@ -115,6 +126,20 @@
       "relation_type": "pressure_on",
       "confidence": 0.77,
       "evidence_note": "IAEA 核查压力推动协议把核问题后置但保留议程。"
+    },
+    {
+      "from_id": "E4",
+      "to_id": "E5",
+      "relation_type": "formalized_by",
+      "confidence": 0.83,
+      "evidence_note": "框架性安排在 6 月 17-18 日进入签署完成状态。"
+    },
+    {
+      "from_id": "E5",
+      "to_id": "E6",
+      "relation_type": "reduces_importance_of",
+      "confidence": 0.7,
+      "evidence_note": "签署既成事实降低了后续仪式的决定性。"
     },
     {
       "from_id": "T001",
@@ -169,10 +194,22 @@
       "publisher": "AP via Newsday",
       "date": "2026-06-17",
       "slug": "iran-us-israel-war-oil-deal-june-17-2026"
+    },
+    {
+      "id": "SRC-REUTERS-2026-06-17",
+      "publisher": "Reuters via U.S. News",
+      "date": "2026-06-17",
+      "slug": "iran-mou-was-signed-on-wednesday-by-trump-and-iran-president-u-s-official-says"
+    },
+    {
+      "id": "SRC-REUTERS-2026-06-18",
+      "publisher": "Reuters via France24",
+      "date": "2026-06-18",
+      "slug": "us-iran-memorandum-details-to-be-released-soon"
     }
   ],
   "assessment": {
     "label": "脆弱临时交易",
-    "summary": "当前更像以停火、通航和短期稳定为先导，把核问题后置处理的阶段性安排，而非终局协议。"
+    "summary": "当前更像以停火、通航和短期稳定为先导、并已进入签署/执行阶段、把核问题后置处理的阶段性安排，而非终局协议。"
   }
 }
