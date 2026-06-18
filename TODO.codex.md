@@ -6,6 +6,7 @@
 - 用户继续要求分析金属铜，包括供需关系、库存变化、美国关税预期及价格走向判断。
 - 用户要求继续直接补三项：铜专题结构化 JSON、铜/铝/镍横向比较、以及可落地的数据库 schema。
 - 用户继续要求补充金属锡分析，重点包括供需关系、库存、上下游与价格判断。
+- 用户要求将 `docs/` 目录中的文档文件名统一改为中文，并推送到 git 远端。
 
 ## Goal
 - 建立文档型仓库骨架。
@@ -18,12 +19,12 @@
 
 ## Scope
 - `README.md`
-- `docs/topic-model-and-us-iran-2026-06-17.md`
-- `docs/oil-price-and-us-energy-security-2026-06-17.md`
-- `docs/copper-supply-demand-and-tariff-2026-06-17.md`
-- `docs/base-metals-comparison-2026-06-17.md`
-- `docs/tin-supply-demand-and-downstream-2026-06-17.md`
-- `docs/postgres-schema-design.md`
+- `docs/事件组织示例-美伊停火与核谈判-2026-06-17.md`
+- `docs/石油价格与美国能源安全-2026-06-17.md`
+- `docs/铜市场-供需库存与美国关税预期-2026-06-17.md`
+- `docs/基本金属横向比较-铜铝镍-2026-06-17.md`
+- `docs/锡市场-供需库存与上下游-2026-06-17.md`
+- `docs/数据库模式设计说明.md`
 - `schema/postgres-initial-schema.sql`
 - `examples/us-iran-2026-06-17.topic.json`
 - `examples/copper-2026-06-17.topic.json`
@@ -49,6 +50,7 @@
 - [x] 补 Postgres 初始 schema 与设计说明。
 - [x] 新增锡供需、库存、上下游与走向判断专题。
 - [x] 补锡专题结构化 JSON 示例。
+- [x] 将 `docs/` 目录文档统一改为中文文件名。
 - [ ] 后续如需继续，补查询 API 设计。
 
 ## Verification

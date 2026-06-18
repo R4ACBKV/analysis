@@ -14,12 +14,12 @@
 
 ## 目录
 
-- [docs/topic-model-and-us-iran-2026-06-17.md](docs/topic-model-and-us-iran-2026-06-17.md)：建模示例、截至 2026-06-17 的美伊局势样例分析，以及油价与 SPR 影响说明。
-- [docs/oil-price-and-us-energy-security-2026-06-17.md](docs/oil-price-and-us-energy-security-2026-06-17.md)：石油价格影响链、特朗普和谈动机、美国受影响路径与 SPR 风险专题。
-- [docs/copper-supply-demand-and-tariff-2026-06-17.md](docs/copper-supply-demand-and-tariff-2026-06-17.md)：铜供需、库存迁移、美国关税预期与价格走向判断。
-- [docs/base-metals-comparison-2026-06-17.md](docs/base-metals-comparison-2026-06-17.md)：铜、铝、镍的横向比较。
-- [docs/tin-supply-demand-and-downstream-2026-06-17.md](docs/tin-supply-demand-and-downstream-2026-06-17.md)：锡供需修复、低库存、上下游与价格判断。
-- [docs/postgres-schema-design.md](docs/postgres-schema-design.md)：当前 Topic/Event/Entity/Relation/Source/Claim 模型的 Postgres 设计说明。
+- [docs/事件组织示例-美伊停火与核谈判-2026-06-17.md](docs/事件组织示例-美伊停火与核谈判-2026-06-17.md)：建模示例、截至 2026-06-17 的美伊局势样例分析，以及油价与 SPR 影响说明。
+- [docs/石油价格与美国能源安全-2026-06-17.md](docs/石油价格与美国能源安全-2026-06-17.md)：石油价格影响链、特朗普和谈动机、美国受影响路径与 SPR 风险专题。
+- [docs/铜市场-供需库存与美国关税预期-2026-06-17.md](docs/铜市场-供需库存与美国关税预期-2026-06-17.md)：铜供需、库存迁移、美国关税预期与价格走向判断。
+- [docs/基本金属横向比较-铜铝镍-2026-06-17.md](docs/基本金属横向比较-铜铝镍-2026-06-17.md)：铜、铝、镍的横向比较。
+- [docs/锡市场-供需库存与上下游-2026-06-17.md](docs/锡市场-供需库存与上下游-2026-06-17.md)：锡供需修复、低库存、上下游与价格判断。
+- [docs/数据库模式设计说明.md](docs/数据库模式设计说明.md)：当前 Topic/Event/Entity/Relation/Source/Claim 模型的 Postgres 设计说明。
 - [schema/postgres-initial-schema.sql](schema/postgres-initial-schema.sql)：可直接执行的初始 schema。
 - [examples/us-iran-2026-06-17.topic.json](examples/us-iran-2026-06-17.topic.json)：可直接复用的结构化样例。
 - [examples/copper-2026-06-17.topic.json](examples/copper-2026-06-17.topic.json)：铜市场专题的结构化样例。
